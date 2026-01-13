@@ -1,0 +1,20 @@
+body {font-family: Arial; background-color: #121212;
+color: #e0e0e0; padding: 20px; cursor: none; }
+h1 { text-align: center; color: #ffcc70; }
+p { text-align: center; color: #cccccc; }
+h2 { color: #ffb703; background-color: #1e1e1e; padding: 8px; }
+h3 { color: #ffd166; }
+ul { background-color: #1e1e1e; padding: 15px; width: 60%; }
+table { border-collapse: collapse; width: 60%; margin-top: 10px; background-color: #1e1e1e; }
+table, th, td { border: 1px solid #444444; }
+th { background-color: #333333; color: #ffcc70; }
+th, td { padding: 8px; text-align: center; }
+hr { border: 1px solid #444444; }
+.navbar { background-color: #1e1e1e; padding: 10px; text-align: center; } 
+.navbar a { margin: 10px; text-decoration: none; color: #ffcc70; font-weight: bold; }
+img { display: block; margin: 20px auto; border: 3px solid #ffcc70; }
+input { padding: 8px; width: 60%; background-color: #222222; color: white; border: 1px solid #555555; }
+button { padding: 8px 15px; background-color: #ffcc70; border: none; cursor: pointer; }
+#answer { background-color: #1e1e1e; padding: 10px; margin-top: 10px; width: 60%; }
+.footer { font-size: 14px; color: #aaaaaa; text-align: center; background-color: #1e1e1e; padding: 10px; }
+#dogCursor { position: fixed; top: 50%; left: 50%; font-size: 24px; pointer-events: none; z-index: 9999; }

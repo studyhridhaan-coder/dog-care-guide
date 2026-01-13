@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dog Care Guide</title>
+<img src="https://th.bing.com/th/id/OIP.FNKgH-k3128Wir1n8xce9AHaFj?w=245&h=184&c=7&r=0&o=7&pid=1.7&rm=3"
+width="300">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Dog Care Guide</h1>
+<p>Everything your dog needs to stay happy and healthy</p>
+<hr>
+<h2>🐕 Ask WoofGPT</h2>
+<p>Ask any question related to dogs and WoofGPT will try to answer.</p>
+<input type="text" id="question" placeholder="Type your question here">
+<br><br>
+<button onclick="askWoofGPT()">Ask</button>
+<script>
+function fillQuestion(text) {
+document.getElementById("question").value = text;
+}
+</script>
+
+<p id="answer"></p>
+<p><b>Suggested Questions: (Be Straightforward with your query :) )  </b></p>
+<button onclick="fillQuestion('Dog food')">Dog food</button>
+<button onclick="fillQuestion('German Shepard')">German Shepard</button>
+<button onclick="fillQuestion('Dog vaccination')">Dog vaccination</button>
+<button onclick="fillQuestion('Golden Retriever')">Golden Retriever</button>
+<hr>
+<hr>
+<h2>Food and Nutrition</h2>
+<h3>Foods dogs can eat</h3>
+<ul>
+<li>Boiled rice</li>
+<li>Cooked chicken</li>
+<li>Carrots</li>
+<li>Apples without seeds</li>
+</ul>
+<h3>Foods dogs should not eat</h3>
+<ul>
+<li>Chocolate</li>
+<li>Onions</li>
+<li>Grapes</li>
+<li>Spicy food</li>
+</ul>
+<table>
+<tr>
+<th>Food Item</th>
+<th>Safe for Dogs</th>
+</tr>
+<tr>
+<td>Chicken</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Chocolate</td>
+<td>No</td>
+</tr>
+</table>
+<hr>
+<h2>Daily Care</h2>
+<p><b>Walking:</b> Dogs should be taken for a walk at least two times a day.</p>
+<p><b>Grooming:</b> Brushing helps remove loose hair and keeps the coat clean.</p>
+<p><b>Bathing:</b> Dogs should be bathed once in three to four weeks.</p>
+<hr>
+<h2>Health Basics</h2>
+<h3>Vaccinations</h3>
+<ul>
+<li>Rabies</li>
+<li>Distemper</li>
+<li>Parvovirus</li>
+</ul>
+<h3>Common signs of illness</h3>
+<ul>
+<li>They act weird </li>
+<li>Loss of appetite</li>
+<li>Vomiting</li>
+<li>Less energy than usual</li>
+<li>Continuous scratching</li>
+</ul>
+<h3>Most Important Tip</h3>
+<ul>
+<li>They are your pet treat them kindly and with patience, and have fun and play with them :) Happy Dogging 🐶</li>
+</ul>
+<p class="footer">This website is created by Hridhaan for Submission for 🐶 Woof YSWS for Hack Club project And @AVD your dog is too cute!</p>
+<script>
+function askWoofGPT() {
+var question = document.getElementById("question").value;
+var answerBox = document.getElementById("answer");
+if (question === "") {
+answerBox.innerHTML = "Please enter a question.";
+return;
+}
+
+answerBox.innerHTML = "Searching for answer...";
+var searchQuery = encodeURIComponent(question);
+fetch("https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=" + searchQuery + "&format=json&origin=*")
+.then(function(response) {
+return response.json();
+})
+.then(function(data) {
+if (data.query.search.length > 0) {
+answerBox.innerHTML = data.query.search[0].snippet + "...";
+} else {
+answerBox.innerHTML = "No information found.";
+}
+})
+.catch(function() {
+answerBox.innerHTML = "Error fetching data.";
+});
+        
+function dropDogEmoji() {
+var emoji = document.createElement("div");
+emoji.innerHTML = "🐶";
+emoji.style.position = "fixed";
+emoji.style.left = Math.random() * window.innerWidth + "px";
+emoji.style.top = "0px";
+emoji.style.fontSize = "24px";
+
+document.body.appendChild(emoji);
+var fall = 0;
+var interval = setInterval(function() {
+fall += 5;
+emoji.style.top = fall + "px";
+if (fall > window.innerHeight) {
+clearInterval(interval);
+document.body.removeChild(emoji);
+}}, 50);}
+
+setInterval(dropDogEmoji, 1500);}
+</script>
+<div id="dogCursor">🐶</div>
+<script>
+var dog = document.getElementById("dogCursor");
+document.addEventListener("mousemove", function(event) {
+dog.style.left = (event.clientX + 5) + "px";
+dog.style.top = (event.clientY + 5) + "px";});
+</script>
+<script>
+document.addEventListener("click", function(e) {
+var paw = document.createElement("div");
+paw.innerHTML = "🐾";
+paw.style.position = "fixed";
+paw.style.left = e.clientX + "px";
+paw.style.top = e.clientY + "px";
+paw.style.fontSize = "20px";
+document.body.appendChild(paw);
+setTimeout(function() {
+document.body.removeChild(paw);
+}, 1000);});
+</script>
+</body>
+</html>
