@@ -1,5 +1,5 @@
 Hey!
-
+I made a dog care guide to take care of your dog and it has many good tips!
 This is a Submission for 🐶 Woof YSWS for Hack Club project
 It also has an interactive chat-bot like thing called **WoofGPT** which fetches->(just like my dog)  dog-related information from Wikipedia using JavaScript.
 
@@ -8,6 +8,7 @@ I used the following:
 - CSS
 - JavaScript
 - Wikipedia API
+*special thanks to my IT textbook ;)
 
 Thank you for your time,
 
